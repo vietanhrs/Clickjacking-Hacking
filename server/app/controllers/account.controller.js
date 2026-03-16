@@ -4,17 +4,15 @@ const Account = db.account;
 exports.create = async (req, res) => {
     // Validate request
     if (!req.body.username || !req.body.password) {
-        res.status(400).send({
-            message: "A content properties cannot be empty"
-        })
+        return res.status(400).send({
+            message: "Username and password are required"
+        });
     }
 
     // Create an account
     const account = {
         username: req.body.username,
         password: req.body.password,
-        accountType: req.body.accountType,
-        online: false
     }
 
     // Save an account in the database
