@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-const baseUrl = 'http://localhost:8080/api/account';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +9,8 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  createAccount(data) {
-    return this.http.post(baseUrl, data);
+  createAccount(data: { username: string; password: string }) {
+    return this.http.post(environment.apiUrl, data);
   }
 
 }
